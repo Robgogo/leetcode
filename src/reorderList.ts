@@ -58,21 +58,23 @@ const reorderList = (head: ListNode | null): void => {
   mergeList(head, reversed);
 };
 /**
- * Input: head = [1,2,3,4]
- * Output: [1,4,2,3]
+ * Input: head = [1,2,3,4,5]
+ * Output: [1,5,2,4,3]
  */
 
-let node = new ListNode(1);
-let head = node;
-node.next = new ListNode(2);
-node = node.next;
-node.next = new ListNode(3);
-node = node.next;
-node.next = new ListNode(4);
-node = node.next;
+const input = [1, 2, 3, 4, 5];
 
-console.log("Before", head.printList());
+let temp = new ListNode();
+const headWithDummy = temp;
+for (const i of input) {
+  temp.next = new ListNode(i);
+  temp = temp.next;
+}
+
+const head = headWithDummy.next;
+
+console.log("Before", head?.printList());
 
 reorderList(head);
 
-console.log("After", head.printList());
+console.log("After", head?.printList());

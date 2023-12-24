@@ -35,18 +35,16 @@ const removeNthFromEnd = (
  * Output: [1,2,3,5]
  */
 
-let node = new ListNode(1);
-let head = node;
-node.next = new ListNode(2);
-node = node.next;
-node.next = new ListNode(3);
-node = node.next;
-node.next = new ListNode(4);
-node = node.next;
-node.next = new ListNode(5);
-node = node.next;
+const input = [1, 2, 3, 4, 5];
 
-console.log("Before", head.printList());
+let temp = new ListNode();
+const head = temp;
+for (const i of input) {
+  temp.next = new ListNode(i);
+  temp = temp.next;
+}
+
+console.log("Before", head.next?.printList());
 
 const removed = removeNthFromEnd(head, 2);
 
