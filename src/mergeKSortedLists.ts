@@ -33,10 +33,6 @@ const mergeKLists = (lists: Array<ListNode | null>): ListNode | null => {
   }
   let head = lists[0];
 
-  //   if (!head) {
-  //     return null;
-  //   }
-
   for (let i = 1; i < lists.length; i++) {
     head = mergeTwoLists(head, lists[i]);
   }
@@ -90,6 +86,6 @@ const list3 = headWithDummy3.next;
 
 const lists = [list1, list2, list3];
 
-const mergedList = mergeKLists([]);
+const mergedList = mergeKLists(lists);
 
-console.log(`Merged list is ${mergedList?.printList()}`, { mergedList });
+console.log(`Merged list is ${mergedList?.printList()}`);
