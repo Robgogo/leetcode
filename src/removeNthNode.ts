@@ -3,7 +3,7 @@
  * Given the head of a linked list, remove the nth node from the end of the list and return its head.
  */
 
-import { ListNode } from "./ListNode";
+import { ListNode } from "./utils/ListNode";
 
 const removeNthFromEnd = (
   head: ListNode | null,

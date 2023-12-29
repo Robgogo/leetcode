@@ -7,7 +7,7 @@
  * Return true if there is a cycle in the linked list. Otherwise, return false.
  */
 
-import { ListNode } from "./ListNode";
+import { ListNode } from "./utils/ListNode";
 
 const hasCycle = (head: ListNode | null): boolean => {
   let fastNode = head;

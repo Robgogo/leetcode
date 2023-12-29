@@ -5,7 +5,7 @@
  * Merge all the linked-lists into one sorted linked-list and return it.
  */
 
-import { ListNode } from "./ListNode";
+import { ListNode } from "./utils/ListNode";
 
 const mergeTwoLists = (
   list1: ListNode | null,

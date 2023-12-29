@@ -7,7 +7,7 @@
  * Return the head of the merged linked list.
  */
 
-import { ListNode } from "./ListNode";
+import { ListNode } from "./utils/ListNode";
 
 const mergeTwoLists = (
   list1: ListNode | null,

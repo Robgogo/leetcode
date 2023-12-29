@@ -7,7 +7,7 @@
  * You may not modify the values in the list's nodes. Only nodes themselves may be changed.
  */
 
-import { ListNode } from "./ListNode";
+import { ListNode } from "./utils/ListNode";
 
 const findMid = (head: ListNode | null): ListNode | null => {
   let fastNode = head;
