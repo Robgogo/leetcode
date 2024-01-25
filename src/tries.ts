@@ -8,15 +8,7 @@
  *  - boolean startsWith(String prefix) Returns true if there is a previously inserted string word that has the prefix prefix, and false otherwise.
  */
 
-class TrieNode {
-  children: Record<string, TrieNode>;
-  endOfWord: boolean;
-
-  constructor() {
-    this.children = {};
-    this.endOfWord = false;
-  }
-}
+import { TrieNode } from "./utils/TrieNode";
 
 class Trie {
   root: TrieNode;
@@ -27,10 +19,10 @@ class Trie {
   insert(word: string): void {
     let current = this.root;
     for (let char of word) {
-      if (!current.children[char]) {
-        current.children[char] = new TrieNode();
+      if (!current.children.has(char)) {
+        current.children.set(char, new TrieNode());
       }
-      current = current.children[char];
+      current = current.children.get(char)!;
     }
     current.endOfWord = true;
   }
@@ -38,10 +30,10 @@ class Trie {
   search(word: string): boolean {
     let current = this.root;
     for (let char of word) {
-      if (!current.children[char]) {
+      if (!current.children.has(char)) {
         return false;
       }
-      current = current.children[char];
+      current = current.children.get(char)!;
     }
     return current.endOfWord;
   }
@@ -49,10 +41,10 @@ class Trie {
   startsWith(prefix: string): boolean {
     let current = this.root;
     for (let char of prefix) {
-      if (!current.children[char]) {
+      if (!current.children.has(char)!) {
         return false;
       }
-      current = current.children[char];
+      current = current.children.get(char)!;
     }
     return true;
   }
