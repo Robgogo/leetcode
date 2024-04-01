@@ -1,8 +1,12 @@
-const threeSum = (nums) => {
-  let sorted = nums.sort((a, b) => a - b);
-  let res = [];
+/**
+ * 15. 3Sum
+ * Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+ * Notice that the solution set must not contain duplicate triplets.
+ */
 
-  console.log({ sorted });
+const threeSum = (nums: number[]): number[][] => {
+  let sorted = nums.sort((a, b) => a - b);
+  let res: number[][] = [];
 
   for (let i = 0; i < nums.length; i++) {
     if (i > 0 && sorted[i] == sorted[i - 1]) continue;
@@ -29,5 +33,5 @@ const threeSum = (nums) => {
 
   return res;
 };
-nums = [0, 0, 0, 0];
-console.log(threeSum(nums));
+const numsIn = [0, 0, 0, 0];
+console.log(threeSum(numsIn));
